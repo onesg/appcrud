@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "appcrud",
+    "slug": "appcrud",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "appcrud"
+}
