@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Text, StyleSheet, SafeAreaView } from 'react-native';
+
+import Login from './src/components/Login';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+    //  PASSANDO VALOR NULO PARA USUARIO
+    const [user, setUser] = useState(null);
+
+    //  SE USUARIO FOR FALSO, REDIRECIONAR PARA PAGINA DE LOGIN
+    if (!user) {
+        return <Login />
+    }
+
+    return (
+        <SafeAreaView style={StyleSheet.container}>
+            <Text>LISTAR CARROS</Text>
+        </SafeAreaView>
+    );
+
 }
 
+//  ESTILOS
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    container: {
+        flex: 1,
+        paddingTop: 25,
+        paddingHorizontal: 10,
+        backgroundColor: '#F2f6fc'
+    }
+})
